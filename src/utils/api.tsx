@@ -1,7 +1,7 @@
 import axios, { AxiosInstance } from "axios";
 import get from "lodash/get";
 
-import msg from "@constants/msg";
+import msg from "../constants/msg";
 
 let cancelSource = null;
 

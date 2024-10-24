@@ -1,5 +1,6 @@
-import { isEmpty } from "@utils/validation";
-
+export const isEmpty = (value: string) => {
+    return value === undefined || value === null || value === "";
+};
 //minWidth for helpers below
 export const breakpoints = {
     xxs: 320,

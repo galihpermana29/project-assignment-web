@@ -8,6 +8,15 @@ const nextTranslate = require("next-translate");
 
 const config = {
     trailingSlash: true,
+    images: {
+        domains: ["raw.githubusercontent.com"],
+        remotePatterns: [
+            {
+                protocol: "https",
+                hostname: "raw.githubusercontent.com",
+            },
+        ],
+    },
 };
 
 module.exports = withPlugins([[withBundleAnalyzer], [nextTranslate]], config);
