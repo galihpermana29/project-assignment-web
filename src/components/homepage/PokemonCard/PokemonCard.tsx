@@ -3,6 +3,7 @@ import { stringToColor } from "@helpers/styles";
 import { Box, Button, Card, CardContent, Typography } from "@material-ui/core";
 import { css } from "emotion";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 export default function PokemonCard({
     data,
@@ -12,6 +13,7 @@ export default function PokemonCard({
     id: number;
     onClick?: () => void;
 }) {
+    const router = useRouter();
     return (
         <Card
             onClick={onClick}
@@ -39,6 +41,14 @@ export default function PokemonCard({
                 <Box display="flex" my={2}>
                     {data.types.map((type, idx) => (
                         <Button
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                router.push(
+                                    `/pokemon/type?type=${
+                                        type.type.url.split("/")[6]
+                                    }`,
+                                );
+                            }}
                             key={idx}
                             variant="contained"
                             color="primary"

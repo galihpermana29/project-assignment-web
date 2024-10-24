@@ -114,6 +114,15 @@ const DetailPageJumbotron = ({
                                 {data
                                     ? data.types.map((abx, idx) => (
                                           <Chip
+                                              onClick={() =>
+                                                  router.push(
+                                                      `/pokemon/type?type=${
+                                                          abx.type.url.split(
+                                                              "/",
+                                                          )[6]
+                                                      }`,
+                                                  )
+                                              }
                                               label={abx.type.name}
                                               key={idx}
                                               style={{
@@ -123,6 +132,7 @@ const DetailPageJumbotron = ({
                                                       ),
                                                   color: "var(--basic-neutral-100)",
                                                   textTransform: "capitalize",
+                                                  cursor: "pointer",
                                               }}
                                           />
                                       ))

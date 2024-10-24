@@ -29,6 +29,7 @@ const AllPokemon = ({
     const { t } = useTranslation();
     return (
         <Box
+            id="all-poke"
             component="div"
             style={{
                 backgroundColor: "var(--secondary-yellow-400)",

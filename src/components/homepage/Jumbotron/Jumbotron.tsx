@@ -3,6 +3,7 @@ import { Box, Button, Typography } from "@material-ui/core";
 import { css } from "emotion";
 import useTranslation from "next-translate/useTranslation";
 import Image from "next/image";
+import Link from "next/link";
 import pokemon from "public/images/png-jumbotron2.png";
 const Jumbotron = () => {
     const { t } = useTranslation();
@@ -50,16 +51,18 @@ const Jumbotron = () => {
                 >
                     {t("pokemon:jumbotron-description")}
                 </Typography>
-                <Button
-                    variant="contained"
-                    className={css(`
+                <Link href={"#all-poke"}>
+                    <Button
+                        variant="contained"
+                        className={css(`
                       background-color: var(--secondary-yellow-500);
                       text-transform: initial;
                       max-width: max-content;
                     `)}
-                >
-                    {t("pokemon:jumbotron-action")}
-                </Button>
+                    >
+                        {t("pokemon:jumbotron-action")}
+                    </Button>
+                </Link>
             </Box>
             <Box
                 component="div"
