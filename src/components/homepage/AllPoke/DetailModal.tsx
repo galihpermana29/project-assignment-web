@@ -3,6 +3,7 @@ import { mediaFrom, stringToColor } from "@helpers/styles";
 import { Box, Button, Chip, Modal, Typography } from "@material-ui/core";
 import { css } from "emotion";
 import Image from "next/image";
+import { useRouter } from "next/router";
 // const style = {
 //     position: "absolute",
 //     top: "25%",
@@ -23,6 +24,7 @@ const DetailPokemonModal = ({
     handleClose: () => void;
     data: UsePokemonResult["selectedPokemon"]["data"];
 }) => {
+    const router = useRouter();
     return (
         <Modal
             open={isOpen && data !== null}
@@ -135,6 +137,9 @@ const DetailPokemonModal = ({
                                 </Box>
                             </Box>
                             <Button
+                                onClick={() =>
+                                    router.push(`/pokemon/detail/${data.id}`)
+                                }
                                 style={{
                                     backgroundColor:
                                         "var(--secondary-yellow-600)",

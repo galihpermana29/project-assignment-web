@@ -28,7 +28,7 @@ export default function PokemonCard({
             </Box>
             <CardContent>
                 <Typography gutterBottom variant="h6" component="div">
-                    #{id}
+                    #{data.id}
                 </Typography>
                 <Typography
                     variant="h5"

@@ -15,7 +15,7 @@ const Jumbotron = () => {
               flex-direction: column-reverse;
               justify-content: space-between;
               align-items: center;
-              padding: 40px 30px;
+              padding: 40px 20px;
               ${mediaFrom(600)}{
                 flex-direction: row;
 
@@ -31,12 +31,12 @@ const Jumbotron = () => {
             >
                 <Typography
                     className={css(`
-                        font-weight: 600;
+                        font-weight: 600 !important;
                         color: var(--basic-neutral-700);
-                        font-size: 30px;
+                        font-size: 31px !important;
                         ${mediaFrom(600)}{
                           font-size: 60px !important;
-                              font-weight: 600;
+                              font-weight: 600 !important;
                         }
                       `)}
                 >

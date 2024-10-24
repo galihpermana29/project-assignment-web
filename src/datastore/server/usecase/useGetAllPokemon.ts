@@ -24,7 +24,7 @@ export interface UsePokemonResult {
     setSelectedPokemon: Dispatch<SetStateAction<SelectedPokemon>>;
 }
 
-export const usePokemon = (): UsePokemonResult => {
+export const usePokemon = (customLimit?: number): UsePokemonResult => {
     /**
      * Get list of pokemon and selected modal pokemon statae
      */
@@ -47,7 +47,7 @@ export const usePokemon = (): UsePokemonResult => {
      */
 
     const [queryPagination, setQueryPagination] = useState({
-        limit: 9,
+        limit: customLimit ? customLimit : 9,
         offset: 0,
         total: 0,
     });
@@ -67,8 +67,8 @@ export const usePokemon = (): UsePokemonResult => {
                  */
                 const pokemonDetails = await Promise.all(
                     listData.results.map(async (pokemon) => {
-                        const details = await PokeAPI.getPokemonImageURL(
-                            pokemon.url,
+                        const details = await PokeAPI.getDetailPokemon(
+                            "/pokemon/" + pokemon.url.split("/")[6],
                         );
 
                         return {

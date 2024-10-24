@@ -2,5 +2,12 @@
     "jumbotron-title": "Check and see your Pokemon!",
     "jumbotron-description": "Below is a list of pokemon that are available on this site. You can search for a pokemon by typing the name of the pokemon you want to search.",
     "jumbotron-action": "Search Pokemon",
-    "pokemon-list-title": "list of Pokemon"
+    "pokemon-list-title": "list of Pokemon",
+    "pokemon-weight": "Weight",
+    "pokemon-height": "Height",
+    "pokemon-abilities": "Abilities",
+    "pokemon-types": "Types",
+    "pokemon-sprites": "Sprites",
+    "pokemon-stats": "Stats",
+    "pokemon-evolution": "Evolution"
 }

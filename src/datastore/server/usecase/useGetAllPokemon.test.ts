@@ -6,7 +6,7 @@ import { usePokemon } from "./useGetAllPokemon";
 jest.mock("../repository/PokeRepository", () => ({
     PokeAPI: {
         getAllPokemon: jest.fn(),
-        getPokemonImageURL: jest.fn(),
+        getDetailPokemon: jest.fn(),
     },
 }));
 
@@ -52,7 +52,7 @@ describe("usePokemon Integration Tests", () => {
         };
 
         (PokeAPI.getAllPokemon as jest.Mock).mockResolvedValue(mockPokemonList);
-        (PokeAPI.getPokemonImageURL as jest.Mock).mockResolvedValue(
+        (PokeAPI.getDetailPokemon as jest.Mock).mockResolvedValue(
             mockPokemonDetails,
         );
 
@@ -87,12 +87,10 @@ describe("usePokemon Integration Tests", () => {
     it("should handle pagination changes", async () => {
         const { result } = renderHook(() => usePokemon());
 
-        // Wait for initial state update
         await act(async () => {
             await new Promise((resolve) => setTimeout(resolve, 0));
         });
 
-        // Change pagination
         await act(async () => {
             result.current.setQueryPagination({
                 limit: 20,
