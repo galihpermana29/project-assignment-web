@@ -1,15 +1,7 @@
-import {
-    AppBar,
-    Box,
-    Button,
-    IconButton,
-    Toolbar,
-    Typography,
-} from "@material-ui/core";
+import { AppBar, Box, Toolbar, Typography } from "@material-ui/core";
 import { css } from "emotion";
 import { useRouter } from "next/router";
 import * as React from "react";
-// import MenuIcon from "@mui/icons-material/Menu";
 
 export default function Navbar() {
     const router = useRouter();

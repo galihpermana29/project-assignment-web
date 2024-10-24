@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import useTranslation from "next-translate/useTranslation";
 import { Box, Container } from "@material-ui/core";
 import Navbar from "@components/homepage/Navbar/Navbar";
 import DetailPageJumbotron from "@components/detail-page/Jumbotron/DetailPageJumbotron";
@@ -7,13 +6,10 @@ import { useRouter } from "next/router";
 import useGetDetailPokemon from "@datastore/server/usecase/useGetDetailPokemon";
 
 const DetailPokemon: FC = () => {
-    const { t } = useTranslation();
     const router = useRouter();
     const { id } = router.query;
 
-    const { data, loading, error, sprites, evolutionList } =
-        useGetDetailPokemon(id as string);
-    console.log(data, "data?");
+    const { data, sprites, evolutionList } = useGetDetailPokemon(id as string);
     return (
         <>
             <Navbar />

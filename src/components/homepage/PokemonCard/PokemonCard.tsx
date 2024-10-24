@@ -6,7 +6,6 @@ import Image from "next/image";
 
 export default function PokemonCard({
     data,
-    id,
     onClick,
 }: {
     data: PokemonDetails;

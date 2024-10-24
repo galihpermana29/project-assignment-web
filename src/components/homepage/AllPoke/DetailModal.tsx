@@ -4,16 +4,6 @@ import { Box, Button, Chip, Modal, Typography } from "@material-ui/core";
 import { css } from "emotion";
 import Image from "next/image";
 import { useRouter } from "next/router";
-// const style = {
-//     position: "absolute",
-//     top: "25%",
-//     left: "25%",
-//     transform: " translate(-50%, -50%)",
-//     width: 700,
-//     bgcolor: "background.paper",
-//     boxShadow: 24,
-//     p: 4,
-// };
 
 const DetailPokemonModal = ({
     isOpen,
